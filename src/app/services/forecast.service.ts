@@ -16,7 +16,17 @@ export class ForecastService {
   getCurrentCondition(cityKey: string): Observable<any> {
     const urlProd = `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${environment.api_key}`;
     const urlDev = 'assets/current.json';
-    return this.http.get(environment.production ? urlProd : urlDev);
+    return this.http.get(environment.production ? urlProd : urlDev).pipe(map((data: any[]) => {
+      return data.map(item => {
+        const iconNum: string = item.WeatherIcon < 10 ? `0${item.WeatherIcon}` : `${item.WeatherIcon}`;
+        return {
+          Temperature: item.Temperature,
+          Icon: `https://developer.accuweather.com/sites/default/files/${iconNum}-s.png`,
+          WeatherText: item.WeatherText,
+          isDayTime: item.isDayTime
+        };
+      });
+    }));
   }
   autoComplete(searchWord: string): Observable<any> {
     const urlProd = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${environment.api_key}&q=${searchWord}`;
@@ -29,7 +39,9 @@ export class ForecastService {
     const urlDev = 'assets/fiveDay.json';
     return this.http.get(environment.production ? urlProd : urlDev).pipe(map(key => key['DailyForecasts']), map(data => {
       return data.map(day => {
+        const iconNum: string = day.Day.Icon < 10 ? `0${day.Day.Icon}` : `${day.Day.Icon}`;
         return {
+          Icon: `https://developer.accuweather.com/sites/default/files/${iconNum}-s.png`,
           Date: day.Date,
           Temperature: day.Temperature,
           Day: day.Day

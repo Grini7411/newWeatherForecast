@@ -14,6 +14,7 @@ export class MainComponent implements OnInit, OnDestroy {
   cities: string[];
   searchVal: any;
   selectedCity: string;
+  currentIconSrc: string;
   currentWeatherText: any;
   currentTemperature: string;
   fiveDayForecast: any[];
@@ -47,6 +48,7 @@ export class MainComponent implements OnInit, OnDestroy {
       this.currentWeatherText = value.current?.WeatherText;
       this.currentTemperature = value.isMetric ? value.current.temperature?.Metric?.Value : value.current.temperature?.Imperial?.Value;
       this.fiveDayForecast = value.fiveDayForecast;
+      this.currentIconSrc = value.current?.Icon;
     });
     this.subscriptions.push(stateSubscription);
   }

@@ -22,8 +22,9 @@ export const InitialState = new InjectionToken(
       chosenCity: {LocalizedName: '', key: ''},
       favorites: [],
       fiveDayForecast: [],
-      current: {WeatherText: '', temperature: ''},
-      isMetric: true
+      current: {WeatherText: '', Temperature: '', Icon: ''},
+      isMetric: true,
+      isDayTime: true
     };
   }}
 );

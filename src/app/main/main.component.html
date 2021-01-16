@@ -23,6 +23,7 @@
       </p-autoComplete>
 
       <h2>{{selectedCity}}</h2>
+      <img [src]="currentIconSrc" alt="Icon">
       <h3>{{currentWeatherText}}</h3>
       <h3>{{currentTemperature}}</h3>
 
@@ -30,7 +31,9 @@
       <p-carousel [value]="fiveDayForecast" [numVisible]="3" [numScroll]="1">
         <ng-template let-item pTemplate="item">
           <p-card>
+
             <h4>{{item.Date | date: 'EEEE'}}</h4>
+            <img src="{{item.Icon}}" alt="Icon">
             <h4>{{item.Date | date: 'dd/MM/yyyy'}}</h4>
             <h4>{{item.Temperature.Minimum.Value}} - {{item.Temperature.Maximum.Value}}</h4>
           </p-card>

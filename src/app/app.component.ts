@@ -21,7 +21,8 @@ export class WeatherActionHandler implements ActionHandler {
         ...currentState,
         current: {
           WeatherText: action.payload.current.WeatherText,
-          temperature: action.payload.current.Temperature
+          temperature: action.payload.current.Temperature,
+          Icon: action.payload.current.Icon
         },
         fiveDayForecast: action.payload.fiveDayForecast,
         isMetric: true
