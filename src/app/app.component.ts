@@ -7,7 +7,8 @@ import {MenuItem} from 'primeng/api';
 export class WeatherActionHandler implements ActionHandler {
   handleAction(currentState: any, action: Action): any {
     if (action.type === 'init') {
-      return {...currentState, favorites: JSON.parse(localStorage.getItem('favorites'))};
+      const favorites = localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [];
+      return {...currentState, favorites};
     }
     if (action.type === 'CHANGE_CITY') {
       return {

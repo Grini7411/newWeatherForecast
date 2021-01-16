@@ -3,9 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {FavoritesComponent} from './favorites/favorites.component';
 import {MainComponent} from './main/main.component';
 
-
-
-
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full'},
   { path: 'favorites', component: FavoritesComponent},

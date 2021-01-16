@@ -19,9 +19,10 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
+
 import { GetImgDirective } from './get-img.directive';
-
-
 
 
 @NgModule({
@@ -45,9 +46,10 @@ import { GetImgDirective } from './get-img.directive';
     MessagesModule,
     MessageModule,
     ProgressSpinnerModule,
+    ToastModule,
     ButtonModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

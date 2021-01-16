@@ -1,9 +1,6 @@
 <p-menubar [model]="navItems">
   <p-toggleButton [(ngModel)]="isMetric" onLabel="Celsius" offLabel="Fahrenheit" (onChange)="changeTempSys($event)"></p-toggleButton>
 </p-menubar>
-<!--<video playsinline autoplay muted loop >-->
-<!--  <source src="assets/video/Monsoon.mp4" type="video/mp4">-->
-<!--</video>-->
 
   <div class="p-mt-4">
     <router-outlet></router-outlet>

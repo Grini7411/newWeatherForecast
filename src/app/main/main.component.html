@@ -14,7 +14,9 @@
                       id="autoComp"
                       [suggestions]="cities"
                       (completeMethod)="search($event)"
-                      (onSelect)="loadDataAboutCity($event)">
+                      (onSelect)="loadDataAboutCity($event)"
+                      required
+                      emptyMessage="No city value is complied to the query">
         <ng-template let-searchValue pTemplate="item">
           <div>{{searchValue.LocalizedName}}</div>
         </ng-template>
@@ -40,3 +42,7 @@
   </div>
   <div class="p-col-2"></div>
 </div>
+
+<p-toast position="top-right" key="error" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+<p-toast position="top-right" key="success" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+
