@@ -1,0 +1,42 @@
+<div class="p-shadow-5 p-grid" style="background-color: white; z-index: 5">
+  <div class="p-col-2"></div>
+  <div class="p-col-8">
+    <div class="p-text-center">
+      <p-progressSpinner *ngIf="!cityLoaded" [style]="{width: '50px', height: '50px'}" styleClass="custom-spinner" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+    </div>
+
+    <p-card *ngIf="cityLoaded" class="p-mt-6 p-text-center" styleClass="{{bgClass}}">
+      <div class="p-text-right">
+        <button pButton type="button" label="Add To Favorites" pRipple (click)="addToFavorites()" ></button>
+      </div>
+      <label for="autoComp">Choose a city</label>
+      <p-autoComplete [(ngModel)]="searchVal"
+                      id="autoComp"
+                      [suggestions]="cities"
+                      (completeMethod)="search($event)"
+                      (onSelect)="loadDataAboutCity($event)">
+        <ng-template let-searchValue pTemplate="item">
+          <div>{{searchValue.LocalizedName}}</div>
+        </ng-template>
+      </p-autoComplete>
+
+      <h2>{{selectedCity}}</h2>
+      <h3>{{currentWeatherText}}</h3>
+      <h3>{{currentTemperature}}</h3>
+
+
+      <p-carousel [value]="fiveDayForecast" [numVisible]="3" [numScroll]="1">
+        <ng-template let-item pTemplate="item">
+          <p-card>
+            <h4>{{item.Date | date: 'EEEE'}}</h4>
+            <h4>{{item.Date | date: 'dd/MM/yyyy'}}</h4>
+            <h4>{{item.Temperature.Minimum.Value}} - {{item.Temperature.Maximum.Value}}</h4>
+          </p-card>
+        </ng-template>
+      </p-carousel>
+
+    </p-card>
+
+  </div>
+  <div class="p-col-2"></div>
+</div>

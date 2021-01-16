@@ -1,0 +1,23 @@
+<p-message *ngIf="(favorites | async)?.length === 0" severity="info" text="No Favorites"></p-message>
+<div class="p-text-center">
+  <p-progressSpinner  *ngIf="!favoritesLoaded" [style]="{width: '50px', height: '50px'}" styleClass="custom-spinner" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+</div>
+<p-card *ngIf="(favorites | async)?.length > 0"  class="p-d-flex p-jc-sm-center">
+  <div class="p-d-flex p-jc-between p-px-5">
+    <div class="p-mr-3" *ngFor="let fav of (favorites | async); let l = count">
+      <p-card class="p-text-center p-mr-2 card-favorite" header="{{fav[0].chosenCity.LocalizedName}}" subheader="{{fav[0].WeatherText}}">
+        <ng-template pTemplate="header">
+          <img alt="Card" [appGetImg]="fav[0].chosenCity.LocalizedName">
+        </ng-template>
+        <h3 *ngIf="isMetric">{{fav[0].Temperature.Metric.Value}} {{fav[0].Temperature.Metric.Unit}}</h3>
+        <h3 *ngIf="!isMetric">{{fav[0].Temperature.Imperial.Value}} {{fav[0].Temperature.Imperial.Unit}}</h3>
+        <p-footer>
+          <button pButton type="button" class="p-button-danger" label="Remove" (click)="removeFromFavorites(fav[0].chosenCity.LocalizedName)"></button>
+        </p-footer>
+      </p-card>
+    </div>
+  </div>
+</p-card>
+
+
+

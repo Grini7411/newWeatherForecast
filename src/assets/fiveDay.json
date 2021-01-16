@@ -1,0 +1,180 @@
+{
+  "Headline": {
+    "EffectiveDate": "2021-01-12T07:00:00+02:00",
+    "EffectiveEpochDate": 1610427600,
+    "Severity": 4,
+    "Text": "Expect showery weather Tuesday morning through Tuesday evening",
+    "Category": "rain",
+    "EndDate": "2021-01-13T01:00:00+02:00",
+    "EndEpochDate": 1610492400,
+    "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/extended-weather-forecast/182536?unit=c&lang=en-us",
+    "Link": "http://www.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?unit=c&lang=en-us"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2021-01-10T07:00:00+02:00",
+      "EpochDate": 1610254800,
+      "Temperature": {
+        "Minimum": {
+          "Value": 15.2,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 19.4,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Intermittent clouds",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 36,
+        "IconPhrase": "Intermittent clouds",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?unit=c&lang=en-us"
+    },
+    {
+      "Date": "2021-01-11T07:00:00+02:00",
+      "EpochDate": 1610341200,
+      "Temperature": {
+        "Minimum": {
+          "Value": 16.2,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 21.8,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 6,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Partly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=1&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=1&unit=c&lang=en-us"
+    },
+    {
+      "Date": "2021-01-12T07:00:00+02:00",
+      "EpochDate": 1610427600,
+      "Temperature": {
+        "Minimum": {
+          "Value": 10.3,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 18.5,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 13,
+        "IconPhrase": "Mostly cloudy w/ showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 39,
+        "IconPhrase": "Partly cloudy w/ showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=2&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=2&unit=c&lang=en-us"
+    },
+    {
+      "Date": "2021-01-13T07:00:00+02:00",
+      "EpochDate": 1610514000,
+      "Temperature": {
+        "Minimum": {
+          "Value": 8.2,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 14.9,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Intermittent clouds",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Partly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=3&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=3&unit=c&lang=en-us"
+    },
+    {
+      "Date": "2021-01-14T07:00:00+02:00",
+      "EpochDate": 1610600400,
+      "Temperature": {
+        "Minimum": {
+          "Value": 9.4,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 12.3,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 14,
+        "IconPhrase": "Partly sunny w/ showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=4&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/gr/athens/182536/daily-weather-forecast/182536?day=4&unit=c&lang=en-us"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "LocalObservationDateTime": "2021-01-11T01:56:00+02:00",
+    "EpochTime": 1610322960,
+    "WeatherText": "Partly cloudy",
+    "WeatherIcon": 35,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 13.9,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 57,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://m.accuweather.com/en/gr/athens/182536/current-weather/182536?lang=en-us",
+    "Link": "http://www.accuweather.com/en/gr/athens/182536/current-weather/182536?lang=en-us"
+  }
+]
