@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 .rain {
-  background-image: url("./assets/backgrounds/rain.gif");
-  color: white;
 
 }
 
 .partialCloudy {
-  background-image: url("assets/backgrounds/partialcloud.jpg");
 }
