@@ -66,6 +66,7 @@ export class WeatherActionHandler implements ActionHandler {
 export class AppComponent implements OnInit{
   title = 'newWeatherForecast';
   navItems: MenuItem[];
+  isMetric: boolean;
 
   constructor(private primengConfig: PrimeNGConfig, private stateServ: StateService, private forecastServ: ForecastService) {}
 
