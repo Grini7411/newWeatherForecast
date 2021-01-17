@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { PrimeNGConfig, PrimeIcons } from 'primeng/api';
 import {Action, ActionHandler, ActionHandlers, StateService} from './services/state.service';
 import {MenuItem} from 'primeng/api';
+import {ForecastService} from './services/forecast.service';
 
 
 export class WeatherActionHandler implements ActionHandler {
@@ -65,11 +66,11 @@ export class WeatherActionHandler implements ActionHandler {
 export class AppComponent implements OnInit{
   title = 'newWeatherForecast';
   navItems: MenuItem[];
-  isMetric = true;
 
-  constructor(private primengConfig: PrimeNGConfig, private stateServ: StateService) {}
+  constructor(private primengConfig: PrimeNGConfig, private stateServ: StateService, private forecastServ: ForecastService) {}
 
   ngOnInit(): void {
+
     this.primengConfig.ripple = true;
 
     this.navItems = [
@@ -86,10 +87,7 @@ export class AppComponent implements OnInit{
     ];
   }
   changeTempSys($event: any): void {
+    this.forecastServ.isMetric.next(!this.forecastServ.isMetric.getValue());
     this.stateServ.actions.next({type: 'CHANGE_TEMP_SYS' , payload: {isMetric: $event.checked}});
   }
-
-
-
-
 }

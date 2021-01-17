@@ -12,6 +12,7 @@ import {MessageService} from 'primeng/api';
 })
 export class MainComponent implements OnInit, OnDestroy {
   cities: string[];
+  welcomeMessage: string;
   searchVal: any;
   selectedCity: string;
   currentIconSrc: string;
@@ -51,6 +52,10 @@ export class MainComponent implements OnInit, OnDestroy {
       this.currentIconSrc = value.current?.Icon;
     });
     this.subscriptions.push(stateSubscription);
+
+    this.forecastServ.isDayTime.subscribe(value => {
+     this.welcomeMessage = value ? 'Good Day Sir!' : 'Good Evening Sir';
+    });
   }
 
   search(event: any): void {

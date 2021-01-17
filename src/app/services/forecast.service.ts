@@ -1,7 +1,7 @@
 /* tslint:disable:no-string-literal */
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {map} from 'rxjs/operators';
 
@@ -10,7 +10,8 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ForecastService {
-
+  isDayTime: Subject<boolean> = new Subject<boolean>();
+  isMetric: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   constructor(private http: HttpClient) { }
 
   getCurrentCondition(cityKey: string): Observable<any> {
@@ -19,6 +20,7 @@ export class ForecastService {
     return this.http.get(environment.production ? urlProd : urlDev).pipe(map((data: any[]) => {
       return data.map(item => {
         const iconNum: string = item.WeatherIcon < 10 ? `0${item.WeatherIcon}` : `${item.WeatherIcon}`;
+        this.isDayTime.next(item.isDayTime);
         return {
           Temperature: item.Temperature,
           Icon: `https://developer.accuweather.com/sites/default/files/${iconNum}-s.png`,
@@ -35,7 +37,7 @@ export class ForecastService {
   }
 
   getFiveDayForecast(cityKey: string): Observable<any> {
-    const urlProd = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${environment.api_key}&metric=true`;
+    const urlProd = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${environment.api_key}&metric=${this.isMetric.getValue()}`;
     const urlDev = 'assets/fiveDay.json';
     return this.http.get(environment.production ? urlProd : urlDev).pipe(map(key => key['DailyForecasts']), map(data => {
       return data.map(day => {

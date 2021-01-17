@@ -9,6 +9,7 @@
       <div class="p-text-right">
         <button pButton type="button" label="Add To Favorites" pRipple (click)="addToFavorites()" ></button>
       </div>
+      <h2>{{welcomeMessage}}</h2>
       <label for="autoComp">Choose a city</label>
       <p-autoComplete [(ngModel)]="searchVal"
                       id="autoComp"
